@@ -5,18 +5,20 @@
  * import generate
  * by express-generator
  */
-import express from 'express';
-import path from 'path';
-import cookieParser from 'cookie-parser';
-import logger from 'morgan';
+import express          from 'express';
+import path             from 'path';
+import cookieParser     from 'cookie-parser';
+import logger           from 'morgan';
 
 /**
  * import
  */
-import bodyParser from 'body-parser';
+import bodyParser       from 'body-parser';
 
-import indexRouter from './routes/index.js';
-import usersRouter from './routes/flowers.js';
+import indexRouter      from './routes/indexRoute.js';
+import flowersRouter    from './routes/flowersRoute.js';
+import partysRouter     from './routes/partysRoute.js';
+import playersRouter    from './routes/playersRoute.js';
 
 
 /**
@@ -44,6 +46,8 @@ app.use(bodyParser({
 }));
 
 app.use('/',            indexRouter);
-app.use('/flowers',     usersRouter);
+app.use('/flowers',     flowersRouter);
+app.use('/partys',      partysRouter);
+app.use('/players',     playersRouter);
 
 app.listen(8080);

@@ -5,8 +5,7 @@ import * as ConnectionFactory from './ConnectionFactory.js';
 
 
 const db = ConnectionFactory.connect();
-
-const table = 'flowers';
+const table = 'players';
 
 export function get(req, res) {
     db.select().table(table)
@@ -22,4 +21,8 @@ export function find(req, res) {
     .then((result) => {
         res.json(result);
     });
+}
+
+export function create(req, res) {
+    res.json(req.body);
 }
