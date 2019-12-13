@@ -21,7 +21,7 @@ sudo docker-compose up --build
 - adminer : `http://localhost:8081`
 
 Default database credentials :
-- server: db
+- server: mariadb
 - login: root
 - password: password
 

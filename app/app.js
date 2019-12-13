@@ -43,7 +43,7 @@ app.use(bodyParser({
     extended: false
 }));
 
-app.use('/', indexRouter);
-app.use('/flowers', usersRouter);
+app.use('/',            indexRouter);
+app.use('/flowers',     usersRouter);
 
 app.listen(8080);
