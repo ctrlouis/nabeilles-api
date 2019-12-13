@@ -1,0 +1,39 @@
+version:                         "3"
+
+services:
+
+    node:
+        build:                   ./docker/builds/node
+        environment:
+            - NODE_ENV=dev
+        ports:
+            - "3000:8080"
+        volumes:
+            - ./app:/app/nabeilles_api/app
+        working_dir:             /app/nabeilles_api/app
+        command:                 bash -c "npm i && npm start"
+        links:
+            - mariadb
+
+    mariadb:
+        image:                   mariadb
+        volumes:
+            - ./docker/database:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+
+    phpmyadmin:
+        image:                   phpmyadmin/phpmyadmin
+        ports:
+            - "8080:8080"
+        links:
+            - mariadb
+
+    adminer:
+        image:                   adminer
+        ports:
+            - "8081:8080"
+        links:
+            - mariadb

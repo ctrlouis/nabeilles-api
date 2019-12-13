@@ -1,0 +1,23 @@
+{
+    "name": "nabeilles_api",
+    "version": "1.0.0",
+    "description": "Api de l'application nabeilles",
+    "main": "app.js",
+    "scripts": {
+        "start": "ENV=dev nodemon --experimental-modules app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "type": "module",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "express": "~4.16.1",
+        "morgan": "~1.9.1",
+        "knex": "^0.20.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.1"
+    }
+}
