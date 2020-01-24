@@ -18,7 +18,7 @@ import bodyParser       from 'body-parser';
 import indexRouter      from './routes/indexRoute.js';
 import flowersRouter    from './routes/flowersRoute.js';
 import partysRouter     from './routes/partysRoute.js';
-import playersRouter    from './routes/playersRoute.js';
+import usersRouter      from './routes/usersRoute.js';
 
 
 /**
@@ -48,6 +48,6 @@ app.use(bodyParser({
 app.use('/',            indexRouter);
 app.use('/flowers',     flowersRouter);
 app.use('/partys',      partysRouter);
-app.use('/players',     playersRouter);
+app.use('/users',       usersRouter);
 
 app.listen(8080);

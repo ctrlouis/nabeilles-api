@@ -14,7 +14,7 @@ CREATE TABLE `flowers` (
   `nectar` int(11) DEFAULT NULL,
   `pollen` int(11) NOT NULL,
   `miellat` char(1) DEFAULT NULL,
-  `flowering` varchar(100) NOT NULL,
+  `flowering` varchar(100) DEFAULT NULL,
   `location` varchar(100) DEFAULT NULL,
   `points` int(11) NOT NULL,
   `img` varchar(100) DEFAULT NULL,
@@ -57,60 +57,8 @@ INSERT INTO `flowers` (`id`, `original_name`, `name`, `height`, `nectar`, `polle
 (33,	'Tilia henryana',	'tilleul de Henry',	12,	3,	2,	NULL,	',septembre,jaunâtre',	'étang pavillon d\'accueil',	10,	NULL),
 (34,	'Tilia platyphillos',	'tilleul à larges feuilles',	20,	3,	2,	NULL,	'juin,janâtre',	'parcelle Emile Gallé',	10,	NULL),
 (35,	'Trifolium repens',	'trèfle blanc',	NULL,	3,	2,	NULL,	'mai,juin,juillet,août,septembre',	'pelouse',	10,	NULL),
-(36,	'Vinca minor',	'petite pervenche',	0.3,	2,	0,	NULL,	'mars, avril bleu',	'arboretum',	10,	NULL);
-
-DROP TABLE IF EXISTS `mytable`;
-CREATE TABLE `mytable` (
-  `originale_name` varchar(24) NOT NULL,
-  `name` varchar(31) DEFAULT NULL,
-  `height` varchar(26) DEFAULT NULL,
-  `nectar` int(11) DEFAULT NULL,
-  `pollen` varchar(8) NOT NULL,
-  `miellat` varchar(1) DEFAULT NULL,
-  `flowering` varchar(58) NOT NULL,
-  `place` varchar(33) DEFAULT NULL,
-  `img` varchar(30) DEFAULT NULL,
-  `score` int(11) NOT NULL,
-  PRIMARY KEY (`originale_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO `mytable` (`originale_name`, `name`, `height`, `nectar`, `pollen`, `miellat`, `flowering`, `place`, `img`, `score`) VALUES
-('Acer campestris',	'érable champêtre',	'15m',	3,	'2',	'M',	',avril,mai,vert clair',	'collection historique',	NULL,	10),
-('Acer pseudoplatanus',	'érable sycomore',	'25m',	2,	'2',	NULL,	'mai,jaunâtre',	'forêt',	NULL,	10),
-('Alnus glutinosa',	'aulne glutineux',	'25m',	1,	'2',	'M',	'mars avril,jaune',	'étang',	NULL,	10),
-('Aquilegia vulgaris',	'ancolie',	'0.50m',	2,	'3',	NULL,	'mai,juin bleu',	'collection historique',	NULL,	10),
-('Asclépias syriaca',	'herbe à la ouate',	'1,50m',	3,	'1',	NULL,	'juin,juillet,août mauve',	'collection ornementale',	NULL,	10),
-('Berberis vulgaris',	'épine vinette',	'2m',	2,	'1',	NULL,	',juin,juillet,jaune',	'secteur arboretum Chine',	NULL,	10),
-('Borago officinalis',	'bourrache officinalis',	'0.5m',	3,	'2',	NULL,	'juin,juillet,août,bleu tendre',	'collection historique',	NULL,	10),
-('brassica arvensis',	'moutarde des champs',	'0.6 m                   3',	3,	'1',	NULL,	'juin,juillet,août jaune',	'collection historique',	NULL,	10),
-('Calluna vulgaris',	'bruyère commune callune',	'0.15,0.30m',	2,	'1',	NULL,	'août,blanc,rose',	'secteur terre de bruyère',	NULL,	10),
-('Corylus colurna',	'noisetier de Bysance',	'10,15m',	0,	'1',	NULL,	'fevrier,mars,jaune',	'secteur arboretum Europe',	NULL,	10),
-('Cotoneaster horizontalis',	'cotoneaster',	'2,3m',	3,	'2',	NULL,	'juin,juillet,rose',	'arboretum,secteur chine',	NULL,	10),
-('Crocus vernus',	'crocus de printemps',	NULL,	1,	'2',	NULL,	'fevrier,mars toutes couleurs',	'pelouses',	NULL,	10),
-('Dalhia variabilis',	'dalhia CV',	'0;5,2m',	0,	'2',	NULL,	'juillet,août,septembre toutes couleurs',	'collection de dahlias',	NULL,	10),
-('Epilobium angustifolium',	'epilobe en épis',	'2m',	3,	'2',	NULL,	'juillet,août rose',	'ruisseau',	NULL,	10),
-('Fagopyrum esculentum',	'sarrasin ou blé noir',	'1m',	2,	'1',	NULL,	'juin,juillet,août blanc',	'collection historique',	NULL,	10),
-('Fraxinus ornus',	'frêne à fleurs',	'10m',	1,	'2',	NULL,	'mai, juin blanche',	'secteur arboretum Europe',	NULL,	10),
-('Gleditsia triacanthos',	'févier',	'20m',	2,	'0',	NULL,	'juin,juillet,jaune,vertearboretum secteur Amérique du nord',	NULL,	NULL,	10),
-('Hedera helix',	'lierre',	'rampant',	3,	'3',	NULL,	'septembre, octobre',	'vert tendre,forêt',	NULL,	10),
-('Lavandula officinale',	NULL,	NULL,	3,	'1',	NULL,	'juillet,août,bleu lilas',	'potager',	NULL,	10),
-('Lonicera tartarica',	'chèvrefeuille',	'3m',	2,	'2',	NULL,	'mai,juin,blanc',	'collection historique',	NULL,	10),
-('Médicago sativa',	'luzerne cultivée',	'0.50m',	3,	'1',	NULL,	'juin,juillet,août mauve',	'collection historique',	NULL,	10),
-('Phacelia tanacetifolia',	'phacelie à feuilles de tanaisie',	'0.50m',	NULL,	'3      2',	NULL,	'juillet,oût,septembre jardin écologique bleu clair',	'potager écologique',	NULL,	10),
-('Prunus avium',	'merisier',	'10,15m',	2,	'3',	'M',	'avril,mai,blanche',	'forêt',	NULL,	10),
-('Prunus spinosa',	'prunellier',	'3,4m',	2,	'2',	NULL,	'avril,mai,blanc',	'roseraie',	NULL,	10),
-('Pyracantha coccinéa',	'buisson ardent',	'2,3m',	2,	'3',	NULL,	',juin,juillet,blanc',	'roseraie',	NULL,	10),
-('Robinia pseudoacacia',	'robinier faux acacia',	'20m',	3,	'2',	NULL,	'juin,blanche',	'étang pavillon d\'accueil',	NULL,	10),
-('Rudbeckia laciniata',	'rudbeckia lacinié',	'1,50m',	0,	'3',	NULL,	'juillet août jaune',	'collection historique ornementale',	NULL,	10),
-('Salix capréa',	'saule marsault',	NULL,	2,	'3',	NULL,	'mars avril,jaune,vert',	'ruisseau',	NULL,	10),
-('Solidago virgaurea',	'verge d\'or',	'1.50m',	2,	'2',	NULL,	'août,septembre,octobre jaune',	'collection historique',	NULL,	10),
-('Sophora japonica',	'sophora du japon',	'15 20m',	3,	'1',	NULL,	'août,septembre,blanc crème',	NULL,	NULL,	10),
-('Taraxacum officinalis',	'pissenlit',	NULL,	3,	'3',	NULL,	'avril,mai,juin,juillet jaune',	'pelouse prairie',	NULL,	10),
-('Thymus vulgaris',	'thym',	'0,20m',	3,	'0',	NULL,	'juin,juillet,août,mauve',	'jardin écologique,potager',	NULL,	10),
-('Tilia henryana',	'tilleul de Henry',	'12m',	3,	'2',	NULL,	',septembre,jaunâtre',	'étang pavillon d\'accueil',	NULL,	10),
-('Tilia platyphillos',	'tilleul à larges feuilles',	'20m',	3,	'2',	NULL,	'juin,janâtre',	'parcelle Emile Gallé',	NULL,	10),
-('Trifolium repens',	'trèfle blanc',	NULL,	3,	'2',	NULL,	'mai,juin,juillet,août,septembre',	'pelouse',	NULL,	10),
-('Vinca minor',	'petite pervenche',	'0,30m',	2,	'0',	NULL,	'mars, avril bleu',	'arboretum',	NULL,	10);
+(36,	'Vinca minor',	'petite pervenche',	0.3,	2,	0,	NULL,	'mars, avril bleu',	'arboretum',	10,	NULL),
+(46,	'Erythroxylum caca',	'coca',	2,	2,	4,	'2',	'2',	'2',	20,	'');
 
 DROP TABLE IF EXISTS `party`;
 CREATE TABLE `party` (
@@ -121,8 +69,8 @@ CREATE TABLE `party` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `players`;
-CREATE TABLE `players` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   `party_id` int(11) NOT NULL,
@@ -131,4 +79,4 @@ CREATE TABLE `players` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2020-01-24 12:44:44
+-- 2020-01-24 15:48:50
