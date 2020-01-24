@@ -44,3 +44,27 @@ export function create(req, res) {
         })
         .catch((error) => res.status(500).json(Error.create(500, error)));
 }
+
+export function update(req, res) {
+    const updatedFlowers = {
+        id: req.params.id,
+        original_name: req.body.original_name,
+        name: req.body.name,
+        height: req.body.height,
+        nectar: req.body.nectar,
+        pollen: req.body.pollen,
+        miellat: req.body.miellat,
+        flowering: req.body.flowering,
+        location: req.body.location,
+        points: req.body.points,
+        img: req.body.img
+    };
+
+    db(table)
+        .where('id', req.params.id)
+        .update(updatedFlowers)
+        .then((result) => {
+            if (result <= 0) res.status(404).json(Error.create(404, "Ressource not updated: " + req.originalUrl));
+            res.status(201).send();
+        }).catch((error) => console.error(error));
+}

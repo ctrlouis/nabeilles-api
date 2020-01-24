@@ -15,5 +15,7 @@ router.get('/:id',  Flowers.find);
 /* POST Create flower */
 router.post('/',    Flowers.create);
 
+/* PUT Update flower */
+router.put('/:id',  Flowers.update);
 
 export default router;
