@@ -19,7 +19,7 @@ export function find(req, res) {
     db.select().table(table).where('id', req.params.id)
 
     .then((result) => {
-        res.json(result);
+        res.json(result[0]);
     });
 }
 
