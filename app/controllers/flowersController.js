@@ -9,18 +9,18 @@ const table = 'flowers';
 
 export function get(req, res) {
     db.select().table(table)
-
-    .then((result) => {
-        res.json(result);
-    });
+        .then((result) => {
+            if (result <= 0) res.status(404).json(Error.create(404, "Ressource not found: " + req.originalUrl));
+            res.json(result);
+        });
 }
 
 export function find(req, res) {
     db.select().table(table).where('id', req.params.id)
-
-    .then((result) => {
-        res.json(result[0]);
-    });
+        .then((result) => {
+            if (result <= 0) res.status(404).json(Error.create(404, "Ressource not found: " + req.originalUrl));
+            res.json(result[0]);
+        });
 }
 
 export function create(req, res) {
