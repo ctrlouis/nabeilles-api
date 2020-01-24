@@ -24,5 +24,23 @@ export function find(req, res) {
 }
 
 export function create(req, res) {
-    res.json(req.body);
+    const newFlowers = {
+        original_name: req.body.original_name,
+        name: req.body.name,
+        height: req.body.height,
+        nectar: req.body.nectar,
+        pollen: req.body.pollen,
+        miellat: req.body.miellat,
+        flowering: req.body.flowering,
+        location: req.body.location,
+        points: req.body.points,
+        img: req.body.img
+    };
+
+    db.insert(newFlowers).into(table)
+        .then((result) => {
+            if (result <= 0) res.status(404).json(Error.create(404, "Ressource not created: " + req.originalUrl));
+            res.status(201).send();
+        })
+        .catch((error) => res.status(500).json(Error.create(500, error)));
 }
