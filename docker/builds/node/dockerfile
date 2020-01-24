@@ -1,7 +1,0 @@
-FROM node
-
-RUN npm i body-parser -g
-RUN npm i express -g
-RUN npm i knex -g
-RUN npm i mysql -g
-RUN npm i nodemon -g
