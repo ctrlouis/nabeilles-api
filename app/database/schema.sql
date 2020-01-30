@@ -5,6 +5,10 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+DROP DATABASE IF EXISTS `nabeilles`;
+CREATE DATABASE `nabeilles` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `nabeilles`;
+
 DROP TABLE IF EXISTS `flowers`;
 CREATE TABLE `flowers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,4 +83,4 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2020-01-24 15:48:50
+-- 2020-01-30 09:29:22
